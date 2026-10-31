@@ -390,24 +390,44 @@ body {
   font-size: 13px;
 }
 .aisels-subheading,
-.how-it-works-subheading {
+.how-it-works-subheading,
+.weekly-picks-subheading {
   color: #4a7c59;
   font-size: 12px;
 }
 .aisels-heading,
-.how-it-works-heading {
+.how-it-works-heading,
+.weekly-picks-heading {
   font-family: "Source Serif 4", serif;
   font-size: 27px;
   font-weight: 400;
 }
 
 .aisels-cards-wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* justify-content: space-between; */
   margin-top: 30px;
   flex-wrap: wrap;
   gap: 20px;
 }
+
+@media (max-width: 900px) {
+  .aisels-cards-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .aisels-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 350px) {
+  .aisels-cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 .aisels-card {
   border: 1px solid #e3decb;
   border-radius: 12px;
@@ -495,10 +515,450 @@ body {
   font-size: 13px;
 }
 
-
-
-@media(max-width: 640px){
-  .how-it-works{
+@media (max-width: 640px) {
+  .how-it-works {
     flex-direction: column;
   }
+}
+
+.weekly-picks {
+  background-color: #faf7ee;
+  padding: 50px 20px;
+}
+.weekly-picks-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.weekly-picks-filters {
+  display: flex;
+  gap: 8px;
+  align-self: flex-end;
+}
+.filter-button {
+  border: 1px solid #e3decb;
+  background-color: white;
+  color: #1f2e24;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+.filter-button:hover {
+  border-color: #2f5d39;
+}
+.filter-button.active {
+  background-color: #223929;
+  border-color: #223929;
+  color: white;
+}
+
+.weekly-picks-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 30px;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .weekly-picks-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .weekly-picks-cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  background-color: white;
+  border: 1px solid #e3decb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-card-image {
+  position: relative;
+}
+.product-card-image > img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.product-card-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #faf7ee;
+  color: #1f2e24;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 30px;
+}
+
+.product-card-content {
+  padding: 15px 12px;
+}
+.product-card-content > h4 {
+  font-weight: 600;
+  color: #1f2e24;
+  font-size: 13px;
+}
+.product-card-content > p {
+  font-size: 11px;
+  color: #6f6a5c;
+  margin-top: 3px;
+}
+
+.product-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+.product-price {
+  font-weight: 600;
+  color: #1f2e24;
+  font-size: 13px;
+}
+.add-button {
+  height: 28px;
+  width: 28px;
+  border: none;
+  border-radius: 100%;
+  background-color: #2f5d39;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.add-button:hover {
+  background-color: #223929;
+}
+
+/* Weekend and App Promotion */
+
+.weekend-promo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 20px;
+}
+
+.weekend-card,
+.dinner-card {
+    padding: 35px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.weekend-card {
+    background-color: #223929;
+    color: #faf7ee;
+}
+
+.dinner-card {
+    background-color: #F7E8D5;
+    color: #1f2e24;
+}
+
+
+
+.promo-tag {
+    display: inline-block;
+    background-color: #f2b705;
+    color: #223929;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: fit-content;
+}
+
+.weekend-card h2,
+.dinner-card h2 {
+    font-family: "Source Serif 4", serif;
+    font-weight: 400;
+}
+
+.weekend-card h2 {
+    font-size: 38px;
+}
+
+
+.dinner-card h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.weekend-card p {
+    color: #d5ddcf;
+    font-size: 13px;
+}
+
+.dinner-card p {
+    color: #6f6a5c;
+    font-size: 13px;
+}
+
+.promo-button {
+    background-color: #FAF7EE;
+    color: #223929;
+    text-decoration: none;
+    padding: 11px 22px;
+    border-radius: 30px;
+    width: fit-content;
+    font-size: 13px;
+}
+
+.weekend-card small {
+    font-size: 11px;
+    color: #d5ddcf;
+}
+
+.weekend-time {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 62px;
+}
+
+.dinner-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.dinner-info {
+    flex: 1;
+}
+
+.app-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.app-links a {
+    background-color: #223929;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.app-qr {
+    background-color: white;
+    border: 1px solid #e3decb;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.app-qr img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.app-qr p {
+    font-size: 11px;
+    color: #6f6a5c;
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 650px) {
+    .weekend-promo {
+        grid-template-columns: 1fr;
+    }
+
+    .weekend-card,
+    .dinner-card {
+        padding: 25px;
+    }
+
+    .weekend-card h2 {
+        font-size: 30px;
+    }
+
+    .dinner-card h2 {
+        font-size: 25px;
+    }
+
+    .dinner-card-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* Footer */
+.footer {
+    background-color: #1f2e24;
+    color: #faf7ee;
+    padding: 50px 30px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-brand h2 {
+    font-family: "Source Serif 4", serif;
+    margin-bottom: 12px;
+}
+
+.footer-brand p {
+    color: #c3cbbf;
+    font-size: 13px;
+    max-width: 260px;
+    line-height: 1.6;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column h4 {
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    color: #c3cbbf;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    border-top: 1px solid #4a594c;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #c3cbbf;
+    font-size: 11px;
+}
+
+/* Responsive layout */
+@media (max-width: 650px) {
+    .weekend-promo,
+    .app-promo {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+    }
+
+    .promo-image {
+        width: 100%;
+    }
+
+    .app-promo-content h2 {
+        font-size: 26px;
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 35px 20px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Layout wrapper keeping the box and caption aligned together */
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns both the box and text to the left side */
+  width: 152px; /* Set constraint matching your box size */
+}
+
+/* The container holding the graphic lines */
+.inner-display {
+  background-color: #EAEDDA; /* Light grayish-green background */
+  box-sizing: border-box;
+  padding: 24px 20px;
+  border-radius: 16px; /* Smooth rounded corners */
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Equal spacing between each row */
+  width: 100%;
+  height: 112px;
+}
+
+/* Horizontal alignment containers for the blocks */
+.row {
+  display: flex;
+  gap: 8px; /* Gap between side-by-side blocks */
+  width: 100%;
+}
+
+/* Common properties for every block line */
+.bar {
+  height: 10px;
+  border-radius: 3px; /* Slightly pill-shaped corners matching the graphic */
+}
+
+/* Color palettes matching the original artwork */
+.bar-dark {
+  background-color: #1a2414; /* Deep charcoal / dark green */
+}
+
+.bar-green {
+  background-color: #4a6b4b; /* Muted accent green */
+}
+
+/* Variable horizontal lengths */
+.bar-full {
+  width: 100%;
+}
+
+.bar-long {
+  width: 55%;
+}
+
+.bar-medium {
+  width: 40%;
+}
+
+.bar-short {
+  width: 25%;
+}
+
+/* Text alignment below the block container */
+.caption {
+  margin: 10px 0 0 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  color: #7c7267; /* Soft brown/gray matching your image text color */
+  font-weight: 400;
+}
+
+
+.card {
+  background-color: #f2f5eb; /* Light grayish-green background */
+  border-radius: 16px; /* Smooth rounded corners */
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
 }
